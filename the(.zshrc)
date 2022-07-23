@@ -203,8 +203,11 @@ alias django='python manage.py'
 alias dj='python manage.py'
 alias djr='django runserver'
 alias djt='django test'
+alias mongostart="sudo service mongod start"
+alias mongostop="sudo service mongod stop"
 # alias pidstart="sudo -b unshare --pid --fork --mount-proc /lib/systemd/systemd --system-unit=basic.target & sudo -E nsenter --all -t $(pgrep -xo systemd) runuser -P -l $USER -c "exec $SHELL""
 # alias pidstop="sudo -b nsenter --all -t $(pgrep -xo systemd) kill -9 $(pgrep -xo systemd)"
+
 
 #### brew doctor warning
 # export PATH="/usr/local/sbin:$PATH"
