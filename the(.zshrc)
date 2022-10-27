@@ -195,8 +195,12 @@ alias pab="poetry add --dev black --allow-prereleases"
 alias clr="clear"
 alias tophist="history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head"
 alias zsh-stats="zsh_stats"
-alias pua="pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
-alias pip-update-all="pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
+alias pua2="pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
+alias pua="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+alias pip-update-all2="pip --disable-pip-version-check list --outdated --format=json | python -c 'import json, sys; print('\n'.join([x['name'] for x in json.load(sys.stdin)]))'"
+alias pip-update-all="pip-review --local --auto"
+alias puar="pip-review --local --interactive"
+alias pipgrade="pipupgrade --verbose --latest --yes"
 alias pir='pip install -r requirements.txt'
 alias color="colormap"
 alias django='python manage.py'
@@ -208,7 +212,7 @@ alias mongostop="sudo service mongodb stop"
 # alias pidstart="sudo -b unshare --pid --fork --mount-proc /lib/systemd/systemd --system-unit=basic.target & sudo -E nsenter --all -t $(pgrep -xo systemd) runuser -P -l $USER -c "exec $SHELL""
 # alias pidstop="sudo -b nsenter --all -t $(pgrep -xo systemd) kill -9 $(pgrep -xo systemd)"
 
-
 #### brew doctor warning
 # export PATH="/usr/local/sbin:$PATH"
 # export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
