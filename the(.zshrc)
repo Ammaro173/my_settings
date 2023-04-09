@@ -212,6 +212,8 @@ alias djr='django runserver'
 alias djt='django test'
 alias mongostart="sudo service mongodb start"
 alias mongostop="sudo service mongodb stop"
+alias ll="exa -l -g --icons --git"
+alias llt="exa -1 --icons --tree --git-ignore"
 # alias pidstart="sudo -b unshare --pid --fork --mount-proc /lib/systemd/systemd --system-unit=basic.target & sudo -E nsenter --all -t $(pgrep -xo systemd) runuser -P -l $USER -c "exec $SHELL""
 # alias pidstop="sudo -b nsenter --all -t $(pgrep -xo systemd) kill -9 $(pgrep -xo systemd)"
 
@@ -229,6 +231,10 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval $(thefuck --alias)
+# You can use whatever you want as an alias, like for Mondays:
+# eval $(thefuck --alias FUCK)
 
 # if [$TILIX_ID] || [$VTE_VERSION]; then
 #     source /etc/profile.d/vte.sh
