@@ -128,6 +128,7 @@ plugins=(
     brew
     zsh-syntax-highlighting
     z
+    asdf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -232,7 +233,12 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval $(thefuck --alias)
+eval $(thefuck --alias --enable-experimental-instant-mode)
+
+
+# ZSH & Homebrew # Add asdf.sh to your ~/.zshrc
+# echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
+
 # You can use whatever you want as an alias, like for Mondays:
 # eval $(thefuck --alias FUCK)
 
